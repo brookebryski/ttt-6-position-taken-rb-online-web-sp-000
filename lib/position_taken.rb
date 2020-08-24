@@ -1,8 +1,6 @@
 # code your #position_taken? method here!
-def position_taken?(board, index)
-if (board[index] ==  " " || board[index] == "" || board[index] == nil)
-     taken = false
-   else
-     taken = true
-   end
-   
+def position_taken?(board,position)
+  return false if [" ", "", nil].include?(board[position])
+  return true if ["X", "O"].include?(board[position])
+  raise "#{board[position]} is not a valid move"
+end
